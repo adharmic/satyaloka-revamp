@@ -4,13 +4,13 @@ export default function Navbar() {
   return (
     <div className="flex flex-col gap-2">
       <Separator />
-      <div className="w-full flex flex-row items-center gap-4 d-respira font-extrabold justify-between">
+      <div className="w-full flex flex-row items-center gap-4 d-respira font-extrabold justify-evenly">
         <p>HOME</p>
-        <div className="w-2 aspect-square bg-[var(--damask)] rounded-full" />
+        <div className="h-10 border-r border-[var(--damask)]" />
         <p>ABOUT</p>
-        <div className="w-2 aspect-square bg-[var(--damask)] rounded-full" />
+        <div className="h-10 border-r border-[var(--damask)]" />
         <p>ARTWORK</p>
-        <div className="w-2 aspect-square bg-[var(--damask)] rounded-full" />
+        <div className="h-10 border-r border-[var(--damask)]" />
         <p>ARTICLES</p>
       </div>
       <Separator />
