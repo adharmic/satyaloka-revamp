@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Busillis";
+  src: url("/fonts/In die busillis.ttf");
+}
+
+.d-respira {
+  font-family: "Della Respira", serif;
+  font-style: normal;
+}
