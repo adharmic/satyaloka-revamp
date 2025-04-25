@@ -9,7 +9,6 @@ export default function Header() {
         <Title />
         <div className="flex items-center gap-4 text-lg d-respira font-bold">
           <Button title="HOME" />
-          <div className="text-2xl">♦</div>
           <Button title="ABOUT" />
         </div>
       </div>
