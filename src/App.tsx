@@ -1,4 +1,3 @@
-import Separator from "./components/decorations/Separator";
 import Header from "./components/Header";
 import Paper from "./components/Paper";
 import PostPreview from "./components/PostPreview";
