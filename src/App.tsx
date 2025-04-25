@@ -10,7 +10,7 @@ export default function App() {
         <Header />
         <div className="w-full pt-8 flex flex-col gap-8">
           <div className="font-extrabold d-respira text-3xl">Featured Works</div>
-          <div className="w-full flex flex-row items-center gap-4 justify-evenly">
+          <div className="w-full flex flex-col md:flex-row items-center gap-4 justify-evenly">
             <SquareThumb title="Wedding Cake" img="https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D" />
             <SquareThumb title="Jellyfish" img="https://images.unsplash.com/photo-1744767968954-f3c06e118437?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             <SquareThumb title="Dutch Angle Building" img="https://images.unsplash.com/photo-1744654733851-d9c3276f42b0?q=80&w=3217&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
