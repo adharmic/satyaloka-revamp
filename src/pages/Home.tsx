@@ -4,7 +4,7 @@ import SquareThumb from "../components/SquareThumb";
 
 export default function Home() {
   return (
-    <div className="w-full pt-8 flex flex-col gap-8">
+    <div className="w-full flex flex-col gap-8">
       <SectionHeader title="Featured" />
       <div className="w-full flex flex-col md:flex-row items-center gap-4 justify-evenly">
         <SquareThumb title="Wedding Cake" img="https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D" />

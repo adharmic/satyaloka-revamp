@@ -1,0 +1,60 @@
+interface ArticleFrontmatter {
+  title?: string;
+  date?: string;
+  description?: string;
+  img?: string;
+}
+
+interface MdxArticleModule {
+  frontmatter: ArticleFrontmatter,
+  default: React.ComponentType
+}
+
+interface ArtworkFrontmatter {
+  title?: string;
+  date?: string;
+  description?: string;
+  img?: string;
+}
+
+interface MdxArtworkModule {
+  frontmatter: ArtworkFrontmatter,
+  default: React.ComponentType
+}
+
+
+
+function getArticles() {
+  const articleModules = import.meta.glob<MdxArticleModule>('../content/articles/*.mdx', { eager: true });
+  const articles = Object.entries(articleModules).map(([path, module]) => {
+    const slug = path.replace('../content/articles/', '').replace(/\.mdx$/, '');
+    const frontmatter = module.frontmatter || {};
+
+    return {
+      slug,
+      title: frontmatter.title || "Untitled Article",
+      description: frontmatter.description || "No description given.",
+      img: frontmatter.img || "https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D"
+    };
+  })
+  return articles;
+}
+
+function getArtworks() {
+  const artworkModules = import.meta.glob<MdxArtworkModule>('../content/artwork/*.mdx', { eager: true });
+
+  const artworks = Object.entries(artworkModules).map(([path, module]) => {
+    const slug = path.replace('../content/artwork/', '').replace(/\.mdx$/, '');
+    const frontmatter = module.frontmatter || {};
+
+    return {
+      slug,
+      title: frontmatter.title || "Untitled Article",
+      description: frontmatter.description || "No description given.",
+      img: frontmatter.img || "https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D"
+    };
+  })
+  return artworks;
+}
+
+export { getArticles, getArtworks }

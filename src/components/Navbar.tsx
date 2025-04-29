@@ -10,9 +10,9 @@ export default function Navbar() {
         <div className="h-10 border-r border-[var(--damask)]" />
         <Link to="/about" className="transition-all hover:text-[var(--red)] hover:cursor-pointer">ABOUT</Link>
         <div className="h-10 border-r border-[var(--damask)]" />
-        <p className="transition-all hover:text-[var(--red)] hover:cursor-pointer">ARTWORK</p>
+        <Link to="/artworks" className="transition-all hover:text-[var(--red)] hover:cursor-pointer">ARTWORK</Link>
         <div className="h-10 border-r border-[var(--damask)]" />
-        <p className="transition-all hover:text-[var(--red)] hover:cursor-pointer">ARTICLES</p>
+        <Link to="/articles" className="transition-all hover:text-[var(--red)] hover:cursor-pointer">ARTICLES</Link>
       </div>
       <Separator />
     </div>
