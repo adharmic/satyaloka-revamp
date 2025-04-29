@@ -41,7 +41,7 @@ function getArticles() {
       date: frontmatter.date || Date.now(),
     };
   })
-  return articles;
+  return articles.sort((a, b) => b.date - a.date);
 }
 
 function getArtworks() {
@@ -60,7 +60,7 @@ function getArtworks() {
       date: frontmatter.date || Date.now()
     };
   })
-  return artworks;
+  return artworks.sort((a, b) => b.date - a.date);
 }
 
 function getFeaturedArticles() {
@@ -72,11 +72,11 @@ function getFeaturedArtworks() {
 }
 
 function getRecentArticles() {
-  return getArticles().sort((a, b) => b.date - a.date).slice(0, 3)
+  return getArticles().slice(0, 3)
 }
 
 function getRecentArtworks() {
-  return getArtworks().sort((a, b) => b.date - a.date).slice(0, 3)
+  return getArtworks().slice(0, 3)
 }
 
 export { getArticles, getArtworks, getFeaturedArticles, getFeaturedArtworks, getRecentArticles, getRecentArtworks }

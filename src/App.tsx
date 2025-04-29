@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Article from "./components/Article";
 import Articles from "./pages/Articles";
 import Artworks from "./pages/Artworks";
+import Artwork from "./components/Artwork";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/articles" element={<Articles />} />
             <Route path="/artworks" element={<Artworks />} />
             <Route path="/articles/:slug" element=<Article /> />
+            <Route path="/artworks/:slug" element=<Artwork /> />
           </Routes>
           <Footer />
         </BrowserRouter>
