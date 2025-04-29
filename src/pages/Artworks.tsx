@@ -8,7 +8,7 @@ export default function Artworks() {
   return (
     <div className="flex flex-col gap-8">
       <SectionHeader title="Artwork" />
-      <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+      <div className="flex flex-row gap-4 flex-wrap items-center justify-between">
         {artworks.map((artwork, index) => {
           return (
             <div key={index}>

@@ -1,8 +1,9 @@
 interface ArticleFrontmatter {
   title?: string;
-  date?: string;
+  date?: number;
   description?: string;
   img?: string;
+  featured?: boolean;
 }
 
 interface MdxArticleModule {
@@ -12,9 +13,10 @@ interface MdxArticleModule {
 
 interface ArtworkFrontmatter {
   title?: string;
-  date?: string;
+  date?: number;
   description?: string;
   img?: string;
+  featured?: boolean;
 }
 
 interface MdxArtworkModule {
@@ -34,7 +36,9 @@ function getArticles() {
       slug,
       title: frontmatter.title || "Untitled Article",
       description: frontmatter.description || "No description given.",
-      img: frontmatter.img || "https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D"
+      img: frontmatter.img || "https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D",
+      featured: frontmatter.featured || false,
+      date: frontmatter.date || Date.now(),
     };
   })
   return articles;
@@ -49,12 +53,30 @@ function getArtworks() {
 
     return {
       slug,
-      title: frontmatter.title || "Untitled Article",
+      title: frontmatter.title || "Untitled Artwork",
       description: frontmatter.description || "No description given.",
-      img: frontmatter.img || "https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D"
+      img: frontmatter.img || "https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D",
+      featured: frontmatter.featured || false,
+      date: frontmatter.date || Date.now()
     };
   })
   return artworks;
 }
 
-export { getArticles, getArtworks }
+function getFeaturedArticles() {
+  return getArticles().filter((article) => article.featured);
+}
+
+function getFeaturedArtworks() {
+  return getArtworks().filter((article) => article.featured);
+}
+
+function getRecentArticles() {
+  return getArticles().sort((a, b) => b.date - a.date).slice(0, 3)
+}
+
+function getRecentArtworks() {
+  return getArtworks().sort((a, b) => b.date - a.date).slice(0, 3)
+}
+
+export { getArticles, getArtworks, getFeaturedArticles, getFeaturedArtworks, getRecentArticles, getRecentArtworks }

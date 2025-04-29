@@ -1,21 +1,30 @@
 import PostPreview from "../components/PostPreview";
 import SectionHeader from "../components/SectionHeader";
 import SquareThumb from "../components/SquareThumb";
+import { getFeaturedArticles, getFeaturedArtworks, getRecentArticles, getRecentArtworks } from "../utilities/content-manager";
 
 export default function Home() {
+  const featuredArticles = getFeaturedArticles();
+  const featuredArtwork = getFeaturedArtworks();
+  const recentArticles = getRecentArticles();
+  const recentArtwork = getRecentArtworks();
+
   return (
     <div className="w-full flex flex-col gap-8">
       <SectionHeader title="Featured" />
-      <div className="w-full flex flex-col md:flex-row items-center gap-4 justify-evenly">
-        <SquareThumb title="Wedding Cake" img="https://plus.unsplash.com/premium_photo-1741194731888-cca7bbc05549?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D" />
-        <SquareThumb title="Jellyfish" img="https://images.unsplash.com/photo-1744767968954-f3c06e118437?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <SquareThumb title="Dutch Angle Building" img="https://images.unsplash.com/photo-1744654733851-d9c3276f42b0?q=80&w=3217&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+      <div className="w-full flex flex-col md:flex-row items-center gap-4 justify-between">
+        {featuredArtwork.map((artwork) => <SquareThumb img={artwork.img} title={artwork.title} />)}
       </div>
-      <PostPreview img="https://images.unsplash.com/photo-1744473671695-d00cfb151579?q=80&w=3863&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+      {featuredArticles.map((featuredArticle, index) =>
+        <PostPreview key={index} title={featuredArticle.title} link={featuredArticle.slug} description={featuredArticle.description} img={featuredArticle.img} />
+      )}
       <SectionHeader title="Recent" />
-      <PostPreview img="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-      <PostPreview img="https://images.pexels.com/photos/247851/pexels-photo-247851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-      <PostPreview img="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+      {recentArticles.map((article, index) =>
+        <PostPreview key={index} title={article.title} link={article.slug} description={article.description} img={article.img} />
+      )}
+      <div className="w-full flex flex-col md:flex-row items-center gap-4 justify-between">
+        {recentArtwork.map((artwork) => <SquareThumb img={artwork.img} title={artwork.title} />)}
+      </div>
     </div>
   )
 }

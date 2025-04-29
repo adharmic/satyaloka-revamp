@@ -15,7 +15,7 @@ export default function PostPreview(props: PostPreviewProps) {
         <div className="d-respira">{props.description || "And here's what that post's extended description might say. Lorem ipsum dolor sit amet. Something something something."}</div>
         <Button link={props.link || ""} title="Read More" />
       </div>
-      <div className="w-full border-1 border-[var(--paper)] h-64 rounded-lg">
+      <div className="w-full border-1 border-[var(--damask)] h-64 rounded-lg">
         <img className="w-full h-full object-cover rounded-lg" src={props.img} />
       </div>
     </div>
