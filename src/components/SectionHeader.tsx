@@ -8,7 +8,7 @@ export default function SectionHeader(props: PropsWithChildren<SectionHeaderProp
   return (
     <div className="w-full flex flex-row items-center gap-0 justify-center">
       <div className="w-full border-t-1 border-[var(--damask)]" />
-      <div className="border-0 border-[var(--damask)] text-[var(--damask)] p-2 px-4 rounded-sm font-extrabold d-respira text-3xl w-full flex items-center justify-center text-center">{props.title || props.children}</div>
+      <div className="border-0 border-[var(--damask)] text-[var(--damask)] p-2 px-4 rounded-sm font-extrabold d-respira text-3xl min-w-full flex items-center justify-center text-start">{props.title || props.children}</div>
       <div className="w-full border-t-1 border-[var(--damask)]" />
     </div>
 

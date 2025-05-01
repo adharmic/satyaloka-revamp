@@ -24,7 +24,9 @@ interface MdxArtworkModule {
   default: React.ComponentType
 }
 
-
+function getArticle(slug: string) {
+  return getArticles().find((article) => article.slug == slug);
+}
 
 function getArticles() {
   const articleModules = import.meta.glob<MdxArticleModule>('../content/articles/*.mdx', { eager: true });
@@ -79,4 +81,4 @@ function getRecentArtworks() {
   return getArtworks().slice(0, 3)
 }
 
-export { getArticles, getArtworks, getFeaturedArticles, getFeaturedArtworks, getRecentArticles, getRecentArtworks }
+export { getArticles, getArtworks, getFeaturedArticles, getFeaturedArtworks, getRecentArticles, getRecentArtworks, getArticle }
