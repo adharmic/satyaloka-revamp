@@ -17,9 +17,9 @@ export default function Article() {
         {frontmatter?.title}
       </MdxTitle>
       <div className="rounded-xl">
-        <img className="object-contain rounded-bl-lg border-2 border-[var(--damask)]" src={frontmatter?.img} />
+        <img className="object-contain border-2 border-[var(--damask)]" src={frontmatter?.img} />
       </div>
-      <div className="text-end p-4 bg-[var(--damask)] w-fit rounded-b-xl self-end text-[var(--paper)]">
+      <div className="text-end p-4 bg-[var(--damask)] w-full rounded-b-xl self-end text-[var(--paper)] mb-8">
         {`Published on ${new Date(frontmatter?.date || 0).toLocaleDateString()}`}
       </div>
       <div className="flex flex-col gap-8 text-lg im-fell">
