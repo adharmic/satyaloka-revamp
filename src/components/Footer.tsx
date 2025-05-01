@@ -10,11 +10,15 @@ export default function Footer() {
           <p className="font-bold">Contact</p>
           <p className="text-sm h-full flex items-center gap-2"><b className="underline text-[var(--red)]">adithya@satyaloka.org</b></p>
         </div>
-        <div className="h-full w-full flex flex-col gap-4 items-center p-2">
+        <div className="h-full w-full flex flex-col gap-4 items-center justify-center p-2">
           <p className="font-bold">Follow</p>
-          <div className="h-full flex items-center flex-row gap-4 text-4xl text-[var(--red)]">
-            <AiFillInstagram />
-            <RiBlueskyFill />
+          <div className="h-full w-full flex items-center justify-center flex-row gap-4 text-4xl text-[var(--red)]">
+            <a href="https://www.instagram.com/a.dhar.mic/" className="p-2 transition-all hover:bg-[var(--damask)] rounded-full hover:text-[var(--paper)] hover:cursor-pointer">
+              <AiFillInstagram />
+            </a>
+            <a href="https://bsky.app/profile/did:plc:bcijcdaey4of2i4v664j3nl4" className="p-2 transition-all hover:bg-[var(--damask)] rounded-full hover:text-[var(--paper)] hover:cursor-pointer">
+              <RiBlueskyFill />
+            </a>
           </div>
         </div>
       </div>

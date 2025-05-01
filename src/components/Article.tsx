@@ -12,15 +12,14 @@ export default function Article() {
   const { slug } = useParams();
   const frontmatter = getArticle(slug || "");
   const MdxArticle = lazy(() => import(`../content/articles/${slug}.mdx`));
-  console.log(frontmatter);
 
   return (
     <Suspense fallback={<div>Loading article...</div>}>
       <MdxTitle >
         {frontmatter?.title}
       </MdxTitle>
-      <div className="rounded-xl">
-        <img className="object-contain border-2 border-[var(--damask)]" src={frontmatter?.img} />
+      <div className="h-full w-full rounded-xl">
+        <img className="h-full w-full object-contain border-2 border-[var(--damask)]" src={frontmatter?.img} />
       </div>
       <div className="text-end p-4 bg-[var(--damask)] w-full rounded-b-xl self-end text-[var(--paper)] mb-8">
         {`Published on ${new Date(frontmatter?.date || 0).toLocaleDateString()}`}
