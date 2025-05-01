@@ -10,7 +10,7 @@ interface PostPreviewProps {
 export default function PostPreview(props: PostPreviewProps) {
   return (
     <div className="w-full flex flex-col md:flex-row gap-2 md:gap-4 justify-evenly border-1 border-[var(--damask)] p-4 rounded-lg bg-[var(--secondary)] text-[var(--damask)] drop-shadow-xl">
-      <div className="w-full flex flex-col gap-8 p-2 justify-center">
+      <div className="w-full flex flex-col gap-8 md:p-2 justify-center">
         <div className="d-respira text-2xl font-bold">{props.title || "Here's what a sample blog title would look like."}</div>
         <div className="d-respira">{props.description || "And here's what that post's extended description might say. Lorem ipsum dolor sit amet. Something something something."}</div>
         <Button link={props.link || ""} title="Read More" />
