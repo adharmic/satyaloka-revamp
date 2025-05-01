@@ -1,9 +1,12 @@
 import { lazy, Suspense } from "react";
 import { useParams } from "react-router";
+import { getArticle } from "../utilities/content-manager";
 import MdxH1 from "./markdown/MdxH1";
 import MdxTitle from "./markdown/MdxTitle";
 import MdxImage from "./markdown/MdxImage";
-import { getArticle } from "../utilities/content-manager";
+import MdxLink from "./markdown/MdxLink";
+import MdxList from "./markdown/MdxList";
+import MdxH2 from "./markdown/MdxH2";
 
 export default function Article() {
   const { slug } = useParams();
@@ -23,7 +26,13 @@ export default function Article() {
         {`Published on ${new Date(frontmatter?.date || 0).toLocaleDateString()}`}
       </div>
       <div className="flex flex-col gap-8 text-lg im-fell">
-        <MdxArticle components={{ h1: MdxH1, img(props: object) { return <MdxImage {...props} /> } }} />
+        <MdxArticle components={{
+          h1: MdxH1,
+          img(props: object) { return <MdxImage {...props} /> },
+          a(props: object) { return <MdxLink {...props} /> },
+          ul: MdxList,
+          h2: MdxH2,
+        }} />
       </div>
     </Suspense>
   )

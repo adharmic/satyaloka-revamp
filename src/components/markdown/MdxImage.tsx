@@ -4,7 +4,6 @@ interface MdxImageProps {
 }
 
 export default function MdxImage(props: MdxImageProps) {
-  console.log(props);
   return (
     <div className="drop-shadow-2xl flex flex-col">
       <img className="border-1 border-[var(--damask)] rounded-t-xl w-full object-contain" src={props.src} alt={props.alt} />
