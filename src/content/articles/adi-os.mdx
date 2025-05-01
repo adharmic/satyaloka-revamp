@@ -29,14 +29,8 @@ Prior to this portfolio, I mainly stuck to Vite and React for my web projects. B
 # First Iteration
 While I was searching for inspiration and doing deep-dives on trending design philosophies, I found a great [Medium article](https://medium.com/@sepidy/how-can-i-design-in-the-neo-brutalism-style-d85c458042de) on neobrutalism by Sepideh Yazdi. And so, my initial pass at a portfolio design was a fun exploration of a new-yet-retro aesthetic style.
 
-<div class = "image">
 
-  ![An early neobrutalist version of my portfolio.](./Neobrutalism.png)
-
-  <div class="caption">
-    An early neobrutalist version of my portfolio.
-  </div>
-</div>
+![An early neobrutalist version of my portfolio.](/articles/adi-os/Neobrutalism.png)
 
 I got mixed reviews from this design, with some appreciating the bright colors and thick borders whereas others found it a little too childish and gimmicky for a professional portfolio site. Ultimately, I ended up scrapping the idea to build something a little more modern. Or should I say something a little _less retro_?
 
@@ -51,15 +45,7 @@ A taskbar is the central hub of an operating system's UI. It's what provides the
 
 Initially, I started with a top taskbar. I'm used to a top bar layout on my Linux config, and it felt like the top bar would be more analogous to a navigation bar on a traditional website. The only things I needed the taskbar to accomplish really were to serve as an introduction to the portfolio, and to show which "applications" were currently open.
 
-<div class = "image">
-
-  ![A prior rendition of adiOS.](./Neobrutalism_2.png)
-
-  <div class="caption">
-    A prior rendition of adiOS.
-  </div>
-
-</div>
+  ![A prior rendition of adiOS.](/articles/adi-os/Neobrutalism_2.png)
 
 # Applications
 
@@ -71,15 +57,7 @@ As I was developing this application system, I quickly grew tired of drilling pr
 
 This made it easy to extend the functionality and interactivity of the application system to other parts of the website like the taskbar. Rather than the array of apps needing to be passed up from the WindowManager component and back down into the Taskbar component, the Taskbar component could instead get the current Application Context item and subscribe to or publish changes directly the active list of applications (i.e. the Taskbar could now list which apps were open and toggle focus when those list items were clicked).
 
-<div class = "image">
-
-  ![A maximized application.](./Maximized.png)
-
-  <div class="caption">
-    A maximized application.
-  </div>
-
-</div>
+![A maximized application.](/articles/adi-os/Maximized.png)
 
 In earlier renditions of adiOS, I also had added the ability to maximize application windows. This was just a quick CSS toggle from auto width/height to 100%. I ended up scrapping this as it made the applications feel less consistent when resizing and changing their layouts. The application sizes are instead manual until they exceed the viewport dimensions.
 
@@ -89,15 +67,7 @@ Great, so everything's coming together! The application mimics the general feel 
 
 So, neobrutalism didn't work out. What next? When I was making my [cousin's website](https://malavika.org/), I briefly experimented with an Applèsque glassmorphism effect. The blurs, transparencies, and super round corners definitely have their appeal and I think Apple in general tends to knock it out of the park with their design choices. Their old skeumorphic designs are still some of my favorites.
 
-<div class = "image">
-
-  ![An earlier iteration of a website I made for my cousin](./Glassmorphism.png)
-
-  <div class="caption">
-    An earlier iteration of a website I made for my cousin.
-  </div>
-
-</div>
+![An earlier iteration of a website I made for my cousin](/articles/adi-os/Glassmorphism.png)
 
 However, I'm trying not to be _too_ derivative here. I want to mix things up somehow. As someone who was practically raised by the Internet, I have a lot of nostalgia for the Y2K aesthetic. It's cropped back up in a ton of different ways recently (e.g. vaporware, outrun, etc.) and I wanted to try and evoke that mid-2000s feeling of a wilder, freer Internet ecosystem. 
 
@@ -105,15 +75,7 @@ Thus, I knew I had to do an homage to the operating system that defined my child
 
 At any rate, I got to work borrowing influences from XP. The first step was color. XP's color palette is vibrant and comfortable. Some have criticized XP as a whole for being childlike and unprofessional, but I guess XP and I have that in common when it comes to design tastes. I started by mixing XP's color palette with some elements of glassmorphism (mainly the transparency and the blur effects). I also used a modern image of the [Bucolic Green Hills](https://en.wikipedia.org/wiki/Bliss_(photograph)) and blurred it using CSS for the background.
 
-<div class = "image">
-
-  ![Some amalgamation of glassmorphism and Windows XP.](./Glassmorphism_2.png)
-
-  <div class="caption">
-    Some amalgamation of glassmorphism and Windows XP.
-  </div>
-
-</div>
+![Some amalgamation of glassmorphism and Windows XP.](/articles/adi-os/Glassmorphism_2.png)
 
 Honestly, I really liked this design. There were just a couple things that kept me from committing to it entirely:
 1. The blur and transparency were really finicky on Apple devices. I don't know if it's got something to do with Apple's latest suite of OS upgrades, but not a single browser on my iPhone would load the blur filter properly. It made a lot of the UI elements completely unreadable, and none of the fixes I found online seemed to help. I still have no clue how to resolve this, and you may actually notice that the hovering effects on app icons to this day don't blur properly on some devices.
@@ -123,15 +85,7 @@ The only right move, logically, was to get rid of the glassmorphism and really l
 
 I even went ahead and created some custom vector art assets in [Affinity Designer](https://affinity.serif.com/en-us/designer/) for the icons and the background. It was my first time working isometrically and I'm new to vector art in general, but I think they came out rather nice.
 
-<div class = "image">
-
-  ![Artwork I created for adiOS.](./icons.png)
-
-  <div class="caption">
-    Artwork I created for adiOS.
-  </div>
-
-</div>
+![Artwork I created for adiOS.](/articles/adi-os/icons.png)
 
 Now it's time to add actual content to the applications.
 
@@ -157,30 +111,8 @@ If you've made it this far, thanks so much for your time. I hope reading through
 
 If you've a keen eye, you'll see that the telephone in the Contact icon isn't quite a vector. It was too complex a shape for me to puzzle out in two dimensions, so I hopped into [Blender](https://www.blender.org/) and whipped up a low poly telephone, added a point light, and rendered it out in orthographic view. I'll probably go ahead and do the same with the other icons at some point (and I actually did try it with the Toolbox), but it's lower priority at the moment.
 
-<div class = "image image-small">
+![The untextured low poly telephone model.](/articles/adi-os/telephone.png)
 
-  ![The untextured low poly telephone model.](./telephone.png)
+![An attempt at a low poly toolbox.](/articles/adi-os/toolbox.png)
 
-  <div class="caption">
-    The untextured low poly telephone model.
-  </div>
-
-</div>
-<div class = "image image-small">
-
-  ![An attempt at a low poly toolbox.](./toolbox.png)
-
-  <div class="caption">
-    An attempt at a low poly toolbox.
-  </div>
-
-</div>
-<div class = "image image-small">
-
-  ![A 3D version of the Toolbox badge, adorned with my logo.](./badge.png)
-
-  <div class="caption">
-    A 3D version of the Toolbox badge, adorned with my logo.
-  </div>
-
-</div>
+![A 3D version of the Toolbox badge, adorned with my logo.](/articles/adi-os/badge.png)
