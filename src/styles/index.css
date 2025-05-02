@@ -42,3 +42,8 @@ body {
   color: var(--paper);
   cursor: pointer;
 }
+
+.banner {
+  background-image: url("https://svgsilh.com/svg/2022498.svg");
+  background-size: contain;
+}
