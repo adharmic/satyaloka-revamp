@@ -7,6 +7,7 @@ import MdxImage from "./markdown/MdxImage";
 import MdxLink from "./markdown/MdxLink";
 import MdxList from "./markdown/MdxList";
 import MdxH2 from "./markdown/MdxH2";
+import SectionHeader from "./SectionHeader";
 
 export default function Article() {
   const { slug } = useParams();
@@ -15,6 +16,9 @@ export default function Article() {
 
   return (
     <Suspense fallback={<div>Loading article...</div>}>
+      <div className="mb-8">
+        <SectionHeader title="Article" />
+      </div>
       <MdxTitle >
         {frontmatter?.title}
       </MdxTitle>

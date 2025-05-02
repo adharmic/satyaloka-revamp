@@ -4,6 +4,7 @@ interface SquareThumbProps {
   title: string,
   img: string,
   alt?: boolean,
+  link?: string
 }
 
 export default function SquareThumb(props: SquareThumbProps) {
@@ -15,9 +16,9 @@ export default function SquareThumb(props: SquareThumbProps) {
           <div className={`self-start w-full ${props.alt && "text-[var(--damask)]" || ""}`}>
             {props.title}
           </div>
-          <div className="self-end drop-shadow-lg w-12 min-w-12 aspect-square bg-[var(--damask)] rounded-full text-[var(--paper)] flex items-center justify-center text-2xl">
+          <a href={props.link} className="transition-all hover:cursor-pointer active:scale-90 hover:bg-[var(--paper)] hover:text-[var(--damask)] self-end drop-shadow-lg w-12 min-w-12 aspect-square bg-[var(--damask)] rounded-full text-[var(--paper)] flex items-center justify-center text-2xl">
             <SlLink />
-          </div>
+          </a>
         </div>
       </div>
     </div>

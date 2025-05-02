@@ -13,7 +13,7 @@ export default function Home() {
     <div className="w-full flex flex-col gap-8">
       <SectionHeader title="Featured" />
       <div className="w-full flex flex-col md:flex-row items-center gap-4 justify-between">
-        {featuredArtwork.map((artwork) => <SquareThumb img={artwork.img} title={artwork.title} />)}
+        {featuredArtwork.map((artwork) => <SquareThumb link={"/artworks/" + artwork.slug} img={artwork.img} title={artwork.title} />)}
       </div>
       {featuredArticles.map((featuredArticle, index) =>
         <PostPreview key={index} title={featuredArticle.title} link={"/articles/" + featuredArticle.slug} description={featuredArticle.description} img={featuredArticle.img} />
@@ -23,7 +23,7 @@ export default function Home() {
         <PostPreview key={index} title={article.title} link={"/articles/" + article.slug} description={article.description} img={article.img} />
       )}
       <div className="w-full flex flex-col md:flex-row items-center gap-4 justify-between">
-        {recentArtwork.map((artwork) => <SquareThumb img={artwork.img} title={artwork.title} />)}
+        {recentArtwork.map((artwork) => <SquareThumb link={"/artworks/" + artwork.slug} img={artwork.img} title={artwork.title} />)}
       </div>
     </div>
   )

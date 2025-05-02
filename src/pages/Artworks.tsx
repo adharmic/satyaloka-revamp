@@ -12,7 +12,7 @@ export default function Artworks() {
         {artworks.map((artwork, index) => {
           return (
             <div key={index}>
-              <SquareThumb alt={index % 2 == 1} title={artwork.title} img={artwork.img} />
+              <SquareThumb link={"/artworks/" + artwork.slug} alt={index % 2 == 1} title={artwork.title} img={artwork.img} />
             </div>
           )
         })}

@@ -12,7 +12,7 @@ export default function Articles() {
       {articles.map((article, index) => {
         return (
           <div key={index}>
-            <PostPreview img={article.img} link={article.slug} title={article.title} description={article.description} />
+            <PostPreview img={article.img} link={article.slug} title={article.title} description={article.description} alt={index % 2 == 0} />
           </div>
         )
       })}

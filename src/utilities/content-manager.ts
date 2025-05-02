@@ -46,6 +46,10 @@ function getArticles() {
   return articles.sort((a, b) => b.date - a.date);
 }
 
+function getArtwork(slug: string) {
+  return getArtworks().find((artwork) => artwork.slug == slug);
+}
+
 function getArtworks() {
   const artworkModules = import.meta.glob<MdxArtworkModule>('../content/artwork/*.mdx', { eager: true });
 
@@ -81,4 +85,4 @@ function getRecentArtworks() {
   return getArtworks().slice(0, 3)
 }
 
-export { getArticles, getArtworks, getFeaturedArticles, getFeaturedArtworks, getRecentArticles, getRecentArtworks, getArticle }
+export { getArticles, getArtworks, getFeaturedArticles, getFeaturedArtworks, getRecentArticles, getRecentArtworks, getArticle, getArtwork }
